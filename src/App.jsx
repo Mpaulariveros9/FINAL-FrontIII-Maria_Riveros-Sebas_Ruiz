@@ -3,10 +3,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './routes/Home';
-import Contact from './routes/Contact';
-import Detail from './routes/Detail';
-import Favs from './routes/Favs';
+import Home from '/routes/Home';
+import Contact from '/routes/Contact';
+import Detail from '/routes/Detail';
+import Favs from '/routes/Favs';
 
 function App() {
   return (
