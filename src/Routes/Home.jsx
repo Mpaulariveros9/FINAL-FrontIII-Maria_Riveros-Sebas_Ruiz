@@ -1,46 +1,31 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Card from '../Components/Main/card/Card';
-import { GridCardSkeleton } from '../Components/Main/skeleton/GridCardSkeleton';
-import { useAppContext } from '../hooks/useAppContext';
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Home = () => {
-  const {
-    fetchAllDentists,
-    state: { data, isFetching },
-  } = useAppContext();
-
-  const navigate = useNavigate();
+  const { state } = useContext(ThemeContext);
+  const { apiData } = state;
 
   useEffect(() => {
-    fetchAllDentists();
+    // Lógica para obtener la información de la API al cargar la página
+    // Puedes utilizar fetch o axios para realizar la llamada a la API
   }, []);
 
   return (
-    <>
-      <div className="card-grid">
-        {isFetching ? (
-          <GridCardSkeleton cardAmount={10} />
-        ) : (
-          data.length > 1 &&
-          data.map(dentist => (
-            <Card
-              data={dentist}
-              key={dentist.id}
-              onClick={() => navigate(`/dentist/${dentist.id}`)}
-              textArray={[
-                { field: 'Name', value: dentist.name },
-                { field: 'Username', value: dentist.username },
-              ]}
-              cardClass="card"
-            />
-          ))
-        )}
+    <div className={`home ${state.theme}`}>
+      <h1>Lista de Dentistas</h1>
+      <div className="dentist-list">
+        {apiData &&
+          apiData.map((dentist) => (
+            <div key={dentist.id} className="dentist-card">
+              <Link to={`/dentist/${dentist.id}`}>
+                <h2>{dentist.name}</h2>
+                <p>{dentist.email}</p>
+              </Link>
+            </div>
+          ))}
       </div>
-    </>
+    </div>
   );
 };
 

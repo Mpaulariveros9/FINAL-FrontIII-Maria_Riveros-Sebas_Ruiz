@@ -1,48 +1,52 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { LeftArrow } from '../Components/icons/LeftArrow';
-import Form from '../Components/Main/form/Form';
-import { CheckCircleFillIcon } from '../Components/icons/CheckCircleFillIcon';
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React, { useContext, useState } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Contact = () => {
-  const navigate = useNavigate();
-
-  const [formValues, setFormValues] = useState({
-    name: { value: '', errors: null, validationClass: '' },
-    email: { value: '', errors: null, validationClass: '' },
-    isFormSubmitted: false,
-    isSuccess: false,
+  const { state } = useContext(ThemeContext);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
   });
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  const handleInputChange = (e) => {
+    // Lógica para manejar los cambios en el formulario
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Lógica para validar y enviar el formulario
+    setSuccessMessage(`Gracias ${formData.fullName}, te contactaremos cuando antes vía mail.`);
+  };
 
   return (
-    <>
-      <div className="contact-container">
-        <div onClick={() => navigate(-1)}>
-          <LeftArrow arrowClass="card-grid__arrow" />
-        </div>
-        {formValues.isSuccess ? (
-          <div className="contact-text--success">
-            <CheckCircleFillIcon />
-            <h2>Thanks {formValues.name.value}</h2>
-            <p className="card-grid__empty-message">We will contact you soon by email.</p>
-          </div>
-        ) : (
-          <>
-            <div className="contact-text">
-              <h2 className="contact-text__h2">Want to know more?</h2>
-              <p>Send us your questions and we will contact you</p>
-            </div>
-
-            <Form
-              formValues={formValues}
-              setFormValues={setFormValues}
-            />
-          </>
-        )}
-      </div>
-    </>
+    <div className={`contact ${state.theme}`}>
+      <h1>Contacto</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Nombre Completo:
+          <input
+            type="text"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleInputChange}
+            required
+          />
+        </label>
+        <label>
+          Email:
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
+        </label>
+        <button type="submit">Enviar</button>
+      </form>
+      {successMessage && <p>{successMessage}</p>}
+    </div>
   );
 };
 
