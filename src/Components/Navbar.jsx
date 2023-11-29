@@ -1,25 +1,22 @@
+// src/components/Navbar.jsx
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../context';
 
 const Navbar = () => {
-  const { state, dispatch } = useContext(AppContext);
+  const { theme, setTheme } = useContext(AppContext);
 
-  const handleChangeTheme = () => {
-    dispatch({ type: 'TOGGLE_THEME' });
-  };
-
-  const navStyle = {
-    backgroundColor: state.theme === 'light' ? '#f0f0f0' : '#333',
-    color: state.theme === 'light' ? '#333' : '#f0f0f0',
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
   };
 
   return (
-    <nav style={navStyle}>
-      <Link to="/">Home</Link>
-      <Link to="/Contact">Contacto</Link>
-      <Link to="/Favs">Favoritos</Link>
-      <button onClick={handleChangeTheme}>Cambiar tema</button>
+    <nav>
+      <Link to="/home">Home</Link>
+      <Link to="/favs">Favorites</Link>
+      <Link to="/contact">Contact</Link>
+      <button onClick={toggleTheme}>Change theme</button>
     </nav>
   );
 };
