@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../context/AppContext';
+import { AppContext } from '../context/ThemeContext';
 
 const Navbar = () => {
   const { state, dispatch } = useContext(AppContext);
