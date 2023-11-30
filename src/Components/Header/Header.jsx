@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ListIcon } from '../icons';
+import { ListIcon } from '../../assets/icons';
 import { MenuModal, Navbar } from './';
+import '../../css/Header.css';
+
 
 export const Header = ({ themeClass }) => {
   const navigate = useNavigate();

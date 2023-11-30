@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LeftArrow } from '../Components/icons/LeftArrow';
-import Form from '../Components/Main/form/Form';
-import { CheckCircleFillIcon } from '../Components/icons/CheckCircleFillIcon';
+import { LeftArrow } from '../assets/icons/LeftArrow';
+import Form from '../Components/Main/form/Form.jsx';
+import { CheckCircleFillIcon } from '../assets/icons/CheckCircleFillIcon';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 

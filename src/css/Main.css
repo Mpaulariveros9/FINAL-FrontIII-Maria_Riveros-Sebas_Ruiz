@@ -1,6 +1,6 @@
-@import './card/Card.css';
-@import './form/Form.css';
-@import './skeleton/GridCardSkeleton.css';
+@import '../css/Card.css';
+@import '../css/Form.css';
+@import '../css/GridCardSkeleton.css';
 
 .main {
   align-items: center;

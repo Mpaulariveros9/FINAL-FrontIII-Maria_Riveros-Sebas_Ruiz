@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { LeftArrow } from '../Components/icons/LeftArrow';
+import { LeftArrow } from '../assets/icons/LeftArrow';
 import Card from '../Components/Main/card/Card';
 import { GridCardSkeleton } from '../Components/Main/skeleton/GridCardSkeleton';
 import { useAppContext } from '../hooks/useAppContext';

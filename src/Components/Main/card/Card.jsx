@@ -1,15 +1,13 @@
 import React from 'react';
 import { useAppContext } from '../../../hooks/useAppContext';
-import doctorImg from '../../../img/doctor.jpg';
-import { HeartFillIcon, HeartIcon } from '../../icons';
-import { CardTextContainer } from '.';
+import doctorImg from '../../../assets/img/doctor.jpg';
+import { HeartFillIcon, HeartIcon } from '../../../assets/icons';
+import { CardTextContainer } from './CardTextContainer';
 
-const Card = ({ data, onClick, textArray, cardClass }) => {
+function Card({ data, onClick, textArray, cardClass }) {
   const { id } = data || '';
   const {
-    state: { isDarkMode, favorites },
-    addFavorite,
-    removeFavorite,
+    state: { isDarkMode, favorites }, addFavorite, removeFavorite,
   } = useAppContext();
 
   const isFav = favorites.some(fav => fav.id === id);
@@ -38,8 +36,7 @@ const Card = ({ data, onClick, textArray, cardClass }) => {
       <img
         className="card__image"
         src={doctorImg}
-        alt="doctor"
-      />
+        alt="doctor" />
 
       <CardTextContainer textArray={textArray} />
 
@@ -53,6 +50,6 @@ const Card = ({ data, onClick, textArray, cardClass }) => {
       </button>
     </div>
   );
-};
+}
 
 export default Card;

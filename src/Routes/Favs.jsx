@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LeftArrow } from '../Components/icons/LeftArrow';
+import { LeftArrow } from '../assets/icons/LeftArrow';
 import Card from '../Components/Main/card/Card';
 import { useAppContext } from '../hooks/useAppContext';
 

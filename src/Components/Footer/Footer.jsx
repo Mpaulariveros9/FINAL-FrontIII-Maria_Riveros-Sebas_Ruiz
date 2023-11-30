@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../img/DH.ico';
+import logo from '../../assets/img/DH.png';
 
 export const Footer = ({ themeClass }) => {
   return (
@@ -14,7 +14,7 @@ export const Footer = ({ themeClass }) => {
         <img
           style={{ width: '40px', marginLeft: '10px', height: '40px' }}
           src={logo}
-          alt="DH-logo"
+          alt="DH.ico"
         />
       </a>
     </footer>

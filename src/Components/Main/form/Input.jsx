@@ -1,5 +1,5 @@
 import React from 'react';
-import { XCircleIcon, CheckCircleIcon } from '../../icons';
+import { XCircleIcon, CheckCircleIcon } from '../../../assets/icons';
 
 export const Input = ({ inputClass, onChange, type, id, name, value, placeholder, onBlur, isErrors }) => {
   const icon = isErrors !== null && isErrors ? <XCircleIcon /> : <CheckCircleIcon />;
