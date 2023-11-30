@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAppContext } from '../../hooks/useAppContext';
-import { MoonIcon, SunIcon } from '../icons';
+import { MoonIcon, SunIcon } from '../../assets/icons';
 
 export const ThemeButton = () => {
   const {
