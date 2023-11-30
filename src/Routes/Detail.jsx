@@ -1,27 +1,49 @@
-import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import { ThemeContext } from '../context/AppContext';
+import React, { useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { LeftArrow } from '../Components/icons/LeftArrow';
+import Card from '../Components/Main/card/Card';
+import { GridCardSkeleton } from '../Components/Main/skeleton/GridCardSkeleton';
+import { useAppContext } from '../hooks/useAppContext';
 
-const DentistDetail = () => {
-  const { state } = useContext(ThemeContext);
-  const { apiData } = state;
-  const { id } = useParams();
+//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-  // Encuentra el dentista correspondiente según el ID
-  const selectedDentist = apiData.find((dentist) => dentist.id === parseInt(id));
+const Detail = () => {
+  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+  const { dentistId } = useParams();
+  const {
+    fetchSingleDentist,
+    state: { data, isFetching },
+  } = useAppContext();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchSingleDentist(dentistId);
+  }, []);
 
   return (
-    <div className={`dentist-detail ${state.theme}`}>
-      {selectedDentist && (
-        <div>
-          <h1>{selectedDentist.name}</h1>
-          <p>Email: {selectedDentist.email}</p>
-          <p>Teléfono: {selectedDentist.phone}</p>
-          <p>Website: {selectedDentist.website}</p>
-        </div>
+    <div className="app__detail__card-grid">
+      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
+      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
+      <div onClick={() => navigate(-1)}>
+        <LeftArrow arrowClass="card-grid__arrow" />
+      </div>
+      {isFetching ? (
+        <GridCardSkeleton />
+      ) : (
+        <Card
+          data={data}
+          onClick={null}
+          textArray={[
+            { field: 'Name', value: data.name },
+            { field: 'Email', value: data.email },
+            { field: 'Phone', value: data.phone },
+            { field: 'Website', value: data.website },
+          ]}
+          cardClass="card--detail"
+        />
       )}
     </div>
   );
 };
 
-export default DentistDetail;
+export default Detail;

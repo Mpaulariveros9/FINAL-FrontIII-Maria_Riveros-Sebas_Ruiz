@@ -1,18 +1,47 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../context/AppContext';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { LeftArrow } from '../Components/icons/LeftArrow';
+import Card from '../Components/Main/card/Card';
+import { useAppContext } from '../hooks/useAppContext';
 
-const Favorites = () => {
-  const { state } = useContext(ThemeContext);
-  // Lógica para obtener dentistas destacados del localStorage
+//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+
+const Favs = () => {
+  const {
+    state: { favorites },
+  } = useAppContext();
+
+  const navigate = useNavigate();
 
   return (
-    <div className={`favorites ${state.theme}`}>
-      <h1>Dentistas Destacados</h1>
-      <div className="favorites-list">
-        {/* Renderiza las cards de dentistas destacados aquí */}
+    <>
+      <div onClick={() => navigate(-1)}>
+        <LeftArrow arrowClass="card-grid__arrow" />
       </div>
-    </div>
+      <div className="card-grid">
+        {/* este componente debe consumir los destacados del localStorage */}
+        {/* Deberan renderizar una Card por cada uno de ellos */}
+        <div className="card-grid">
+          {favorites.length > 0 ? (
+            favorites.map(dentist => (
+              <Card
+                data={dentist}
+                key={dentist.id}
+                onClick={() => navigate(`/dentist/${dentist.id}`)}
+                textArray={[
+                  { field: 'Name', value: dentist.name },
+                  { field: 'Username', value: dentist.username },
+                ]}
+                cardClass="card"
+              />
+            ))
+          ) : (
+            <p className="card-grid__empty-message">You dont have any favorite dentist.</p>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 
-export default Favorites;
+export default Favs;

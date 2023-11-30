@@ -1,0 +1,13 @@
+.footer {
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+  height: 10vh;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .footer__p {
+    font-size: 1.2rem;
+  }
+}

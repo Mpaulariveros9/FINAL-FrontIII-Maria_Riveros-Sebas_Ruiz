@@ -1,14 +1,23 @@
-// src/index.jsx o src/main.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './index.css';
 import App from './App';
-import { AppContextProvider } from './context/AppContext';
+import { childAppRoutes, ContextProvider } from './Components/utils';
 
-ReactDOM.render(
+const router = createBrowserRouter([
+  {
+    path: '/*',
+    element: <App />,
+    children: childAppRoutes,
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-    <AppContextProvider>
-      <App />
-    </AppContextProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <ContextProvider>
+      <RouterProvider router={router} />
+    </ContextProvider>
+  </React.StrictMode>
 );

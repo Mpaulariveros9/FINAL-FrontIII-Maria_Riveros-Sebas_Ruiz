@@ -1,21 +1,17 @@
-// src/App.jsx
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { Footer, Header, Main } from './Components';
+import { useAppContext } from './hooks/useAppContext';
 
 function App() {
+  const {
+    state: { isDarkMode },
+  } = useAppContext();
+
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route path="/home" component={Home} />
-        <Route path="/contacto" component={Contact} />
-        <Route path="/dentist/:id" component={Detail} />
-        <Route path="/favs" component={Favs} />
-        {/* Otras rutas */}
-      </Switch>
-      <Footer />
-    </Router>
+    <div className="app">
+      <Header themeClass={isDarkMode ? 'dark' : 'light'} />
+      <Main themeClass={isDarkMode ? 'mainDark' : 'mainLight'} />
+      <Footer themeClass={isDarkMode ? 'dark' : 'light'} />
+    </div>
   );
 }
 
