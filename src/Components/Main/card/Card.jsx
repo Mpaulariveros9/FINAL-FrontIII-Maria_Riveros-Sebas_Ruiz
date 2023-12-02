@@ -1,20 +1,23 @@
 import React from 'react';
 import { useAppContext } from '../../../hooks/useAppContext';
-import doctorImg from '../../../assets/img/doctor.jpg';
-import { HeartFillIcon, HeartIcon } from '../../../assets/icons';
+import doctorImg from '../../../assets/doctor.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { CardContent } from './CardContent';
 
 function Card({ data, onClick, textArray, cardClass }) {
   const { id } = data || '';
   const {
-    state: { isDarkMode, favorites }, addFavorite, removeFavorite,
+    state: { isDarkMode, favorites },
+    addFavorite,
+    removeFavorite,
   } = useAppContext();
 
-  const isFav = favorites.some(fav => fav.id === id);
+  const isFav = favorites.some((fav) => fav.id === id);
 
   const themeClass = isDarkMode ? 'dark' : 'light';
 
-  const onFavButtonClick = e => {
+  const onFavButtonClick = (e) => {
     e.stopPropagation();
 
     if (!isFav) {
@@ -30,24 +33,20 @@ function Card({ data, onClick, textArray, cardClass }) {
       onClick={onClick}
       aria-label="dentistCard"
     >
-      {/* En cada card deberan mostrar en name - username y el id */}
-      {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-      <img
-        className="card__image"
-        src={doctorImg}
-        alt="doctor" />
+      <img className="card__image" src={doctorImg} alt="doctor" />
 
       <CardContent textArray={textArray} />
 
-      {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
+      <div className="card__options">
+        <button onClick={onFavButtonClick} className={`card__fav-button ${isFav ? 'fav' : ''}`}>
+          <FontAwesomeIcon icon={faHeart} className="fa-regular" />
+        </button>
 
-      <button
-        onClick={onFavButtonClick}
-        className="card__fav-button"
-      >
-        {isFav ? <HeartFillIcon /> : <HeartIcon fill={isDarkMode ? 'white' : 'black'} />}
-      </button>
+        <button onClick={onClick} className="card__details-button">
+          <FontAwesomeIcon icon={faArrowRight} />
+        </button>
+
+      </div>
     </div>
   );
 }

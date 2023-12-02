@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LeftArrow } from '../assets/icons/LeftArrow';
 import Card from '../Components/Main/card/Card';
 import { useAppContext } from '../hooks/useAppContext';
 
@@ -15,9 +14,6 @@ const Favs = () => {
 
   return (
     <>
-      <div onClick={() => navigate(-1)}>
-        <LeftArrow arrowClass="card-grid__arrow" />
-      </div>
       <div className="card-grid">
         {/* este componente debe consumir los destacados del localStorage */}
         {/* Deberan renderizar una Card por cada uno de ellos */}

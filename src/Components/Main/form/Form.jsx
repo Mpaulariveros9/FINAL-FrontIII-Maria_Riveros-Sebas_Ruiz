@@ -65,7 +65,10 @@ const Form = ({ formValues, setFormValues }) => {
       {formValues.isFormSubmitted && !formValues.isSuccess && (
         <span className="form__error-message">Por favor revisa tu información de nuevo.</span>
       )}
+
     </form>
+
+    
   );
 };
 

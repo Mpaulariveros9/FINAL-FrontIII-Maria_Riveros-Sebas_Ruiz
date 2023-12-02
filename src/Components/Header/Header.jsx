@@ -12,14 +12,19 @@ export const Header = ({ themeClass }) => {
 
   return (
     <header className={`${themeClass} header`}>
-      <FontAwesomeIcon icon={faTooth} className="header__tooth-icon" />
-      <h1
-        className="header__h1"
-        onClick={() => navigate('/')}
-        aria-label="h1"
-      >
-        DH Odonto
-      </h1>
+      <div className="header_logo">
+
+        <FontAwesomeIcon icon={faTooth} className="header__tooth-icon" />
+        <h1
+          className="header__h1"
+          onClick={() => navigate('/')}
+          aria-label="h1"
+        >
+          DH Odonto
+        </h1>
+        
+      </div>
+      
       <Navbar />
       <button
         className="header__button"

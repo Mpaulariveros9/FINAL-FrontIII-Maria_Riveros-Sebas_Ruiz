@@ -55,10 +55,13 @@
 }
 
 /* Estilos para el logotipo de Digital House */
-.footer__dh-link img {
+.footer__social-icons {
   width: 40px; /* Tamaño del logotipo */
 }
 
+.dark .footer__social-icons a {
+  color: #fff; /* Color de los iconos en el tema oscuro */
+}
 
 .icons__footer{
   font-size: 30px;

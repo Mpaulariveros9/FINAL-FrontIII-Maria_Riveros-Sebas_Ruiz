@@ -1,13 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import logo from '../../assets/img/DH.ico';
+import logo from '../../assets/DH.ico';
 
 export const Footer = ({ themeClass }) => {
   return (
     <footer className={`footer ${themeClass}`}>
        {/* Enlace a la página web de Digital House */}
-      
       <a
         className="footer__dh-link"
         href="https://www.digitalhouse.com/"
@@ -24,7 +23,7 @@ export const Footer = ({ themeClass }) => {
       <p className="footer__p">Desarrollado por Maria Paula Riveros y Sebastian Ruiz</p>
       
       {/* Iconos de redes sociales */}
-      <div className={`${themeClass} icons__footer`} >
+      <div className="footer__social-icons">
         <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faFacebook} />
         </a>
@@ -35,8 +34,6 @@ export const Footer = ({ themeClass }) => {
           <FontAwesomeIcon icon={faInstagram} />
         </a>
       </div>
-
-      
     </footer>
   );
 };

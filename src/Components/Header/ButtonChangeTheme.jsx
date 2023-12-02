@@ -10,7 +10,7 @@ export const ButtonChangeTheme = () => {
   } = useAppContext();
 
   return (
-    <button
+    <button 
       className="menu-modal__theme-button"
       onClick={changeTheme}
       aria-label="ButtonChangeTheme"

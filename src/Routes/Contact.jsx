@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LeftArrow } from '../assets/icons/LeftArrow';
-import Formulario from '../Components/Main/form/Form.jsx';
-import { CheckCircleFillIcon } from '../assets/icons/CheckCircleFillIcon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faHeart } from '@fortawesome/free-solid-svg-icons';
+import Form from '../Components/Main/form/Form.jsx';
+import Oral from '../assets/Oral-care-pana.png';
 
-// Este componente deberá ser estilado como "dark" o "light" dependiendo del tema del Contexto
-
-const Contacto = () => {
+const Contact = () => {
   const navigate = useNavigate();
 
-  const [formValues, setFormValues] = useState({
+  const [formValues, setFormValues] = React.useState({
     name: { value: '', errors: null, validationClass: '' },
     email: { value: '', errors: null, validationClass: '' },
     isFormSubmitted: false,
@@ -20,30 +19,36 @@ const Contacto = () => {
     <>
       <div className="contact-container">
         <div onClick={() => navigate(-1)}>
-          <LeftArrow arrowClass="card-grid__arrow" />
+          <FontAwesomeIcon icon={faArrowRight} className="card-grid__arrow" />
         </div>
         {formValues.isSuccess ? (
           <div className="contact-text--success">
-            <CheckCircleFillIcon />
-            <h2>Gracias {formValues.name.value}</h2>
-            <p className="card-grid__empty-message">Nos pondremos en contacto pronto por correo electrónico.</p>
+            <FontAwesomeIcon icon={faCheckCircle} />
+            <h2>Thanks {formValues.name.value}</h2>
+            <p className="card-grid__empty-message">We will contact you soon by email.</p>
           </div>
         ) : (
           <>
             <div className="contact-text">
-              <h2 className="contact-text__h2">¿Quieres saber más?</h2>
-              <p>Envíanos tus preguntas y nos pondremos en contacto contigo</p>
+              <h3 className="contact-text__h2">Want to know more?</h3>
+              <p>Send us your questions, and we will contact you.</p>
             </div>
 
-            <Formulario
-              formValues={formValues}
-              setFormValues={setFormValues}
-            />
+            <Form formValues={formValues} setFormValues={setFormValues} />
           </>
         )}
+
+        
+      </div>
+
+      <div className="contact-image-container">
+          <img 
+          style={{ width: '450px' }}
+          src={Oral} 
+          alt="Contact" />
       </div>
     </>
   );
 };
 
-export default Contacto;
+export default Contact;

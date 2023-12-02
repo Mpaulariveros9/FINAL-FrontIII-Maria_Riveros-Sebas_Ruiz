@@ -9,6 +9,11 @@
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.header_logo{
+  align-items: center;
+  display: flex;
+}
+
 .header__tooth-icon{
   font-size: 40px;
 }
@@ -27,7 +32,7 @@
   border-radius: 0 0 0 5px;
   display: flex;
   flex-direction: column;
-  font-weight: 600;
+  font-weight: 400;
   height: 150px;
   justify-content: space-between;
   padding: 5px 10px;
@@ -51,14 +56,14 @@
 
 .navbar a {
   color: inherit;
+  text-decoration: none;
 }
 
 .menu-modal__theme-button {
   background-color: transparent;
   border: none;
-  height: 16px;
   margin: 0 auto 10px;
-  width: 16px;
+  font-size: 25px;
 }
 
 .menu-modal__theme-button:hover {
@@ -70,16 +75,34 @@
 }
 
 .light .navbar a.active {
-  color: rgb(23, 43, 170);
+  color: #007bff;
 }
 
-.dark .menu-modal a.active {
-  color: #1248c5;
+.dark .menu-modal__theme-button a.active {
+  color: #ffffff;
 }
 
-.light .menu-modal a.active {
-  color: #818181;
+.light .menu-modal__theme-button a.active {
+  color: rgb(129, 129, 129);
 }
+
+.dark .menu-modal a {
+  color: #ffffff;
+}
+
+.light .menu-modal a {
+  color: rgb(129, 129, 129);
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a svg {
+  margin-right: 8px; /* Ajusta el margen según tus preferencias */
+}
+
 
 @media (min-width: 640px) {
   .header__button {
@@ -101,7 +124,7 @@
   }
 
   .header {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .menu-modal__theme-button {
@@ -116,11 +139,11 @@
   }
 
   .header__h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .header {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .menu-modal__theme-button {

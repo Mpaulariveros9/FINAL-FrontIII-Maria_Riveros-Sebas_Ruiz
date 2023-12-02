@@ -1,8 +1,9 @@
 import React from 'react';
-import { XCircleIcon, CheckCircleIcon } from '../../../assets/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 export const Input = ({ inputClass, onChange, type, id, name, value, placeholder, onBlur, isErrors }) => {
-  const icon = isErrors !== null && isErrors ? <XCircleIcon /> : <CheckCircleIcon />;
+  const icon = isErrors !== null && isErrors ? <FontAwesomeIcon icon={faTimesCircle} /> : <FontAwesomeIcon icon={faCheckCircle} />;
   return (
     <>
       <div className="input-container">

@@ -15,6 +15,7 @@
 }
 
 
+
 .card__text {
   display: flex;
   flex-direction: column;
@@ -22,12 +23,44 @@
   padding: 0 5px;
 }
 
+.card__options{
+  display: flex;
+
+}
+
+
 .card__fav-button {
   background-color: transparent;
   border: none;
   height: 20px;
-  margin: 0 auto;
+  margin-right: 45px;
   width: 20px;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.card__fav-button.fav {
+  color: red; /* O cualquier otro color que desees para el corazón favorito */
+}
+
+.dark .card__fav-button.fav {
+  color: red; /* O cualquier otro color que desees para el corazón favorito */
+}
+
+.card__details-button{
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.dark .card__fav-button {
+  color: white;
+}
+
+.dark .card__details-button {
+  color: white;
 }
 
 .card__fav-button:hover {
@@ -63,7 +96,7 @@
   flex-direction: column;
   height: 350px;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   width: 200px;
 }
 
@@ -76,11 +109,13 @@
 .card--detail {
   border-radius: 10px;
   display: flex;
+  justify-content: center; 
+  align-items: center;
   flex-direction: column;
   height: 405px;
   justify-content: space-between;
   padding-bottom: 10px;
-  width: 250px;
+  width: 600px;
 }
 
 /* Favs */
