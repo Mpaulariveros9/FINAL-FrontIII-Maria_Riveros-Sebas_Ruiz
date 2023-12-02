@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LeftArrow } from '../assets/icons/LeftArrow';
-import Form from '../Components/Main/form/Form.jsx';
+import Formulario from '../Components/Main/form/Form.jsx';
 import { CheckCircleFillIcon } from '../assets/icons/CheckCircleFillIcon';
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+// Este componente deberá ser estilado como "dark" o "light" dependiendo del tema del Contexto
 
-const Contact = () => {
+const Contacto = () => {
   const navigate = useNavigate();
 
   const [formValues, setFormValues] = useState({
@@ -25,17 +25,17 @@ const Contact = () => {
         {formValues.isSuccess ? (
           <div className="contact-text--success">
             <CheckCircleFillIcon />
-            <h2>Thanks {formValues.name.value}</h2>
-            <p className="card-grid__empty-message">We will contact you soon by email.</p>
+            <h2>Gracias {formValues.name.value}</h2>
+            <p className="card-grid__empty-message">Nos pondremos en contacto pronto por correo electrónico.</p>
           </div>
         ) : (
           <>
             <div className="contact-text">
-              <h2 className="contact-text__h2">Want to know more?</h2>
-              <p>Send us your questions and we will contact you</p>
+              <h2 className="contact-text__h2">¿Quieres saber más?</h2>
+              <p>Envíanos tus preguntas y nos pondremos en contacto contigo</p>
             </div>
 
-            <Form
+            <Formulario
               formValues={formValues}
               setFormValues={setFormValues}
             />
@@ -46,4 +46,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contacto;

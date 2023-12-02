@@ -9,55 +9,40 @@
 }
 
 :root {
-  --very-dark-gray: #cb4508;
-  --dark-gray: #b63406;
-  --light-gray: #f1f1f1;
-  --very-light-gray: #fafafa;
-  --skeleton-main: #c2cfd6;
-  --skeleton-secondary: #f0f3f5;
-  --success-green: #03c503;
+  --primary-color: #007bff; /* Azul brillante como color principal */
+  --secondary-color: #0056b3; /* Azul oscuro como color secundario */
+  --background-color: #ffffff; /* Fondo blanco */
+  --text-color: #333333; /* Texto negro */
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+  color: var(--text-color);
 }
 
-input:autofill,
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  transition: background-color 5000s ease-in-out 0s;
+/* Tema claro */
+.light {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-label:hover {
-  cursor: pointer;
-}
-
-/* Theme */
-
+/* Tema oscuro */
 .dark {
-  background-color: var(--very-dark-gray);
+  background-color: var(--primary-color);
   color: white;
 }
 
-.light {
-  background-color: var(--light-gray);
-}
-
 .mainDark {
-  background-color: var(--dark-gray);
+  background-color: var(--secondary-color);
   color: white;
 }
 
 .mainLight {
-  background-color: var(--very-light-gray);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }

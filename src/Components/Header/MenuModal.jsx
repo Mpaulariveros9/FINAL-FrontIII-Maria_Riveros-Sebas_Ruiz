@@ -20,14 +20,14 @@ export const MenuModal = ({ themeClass, setIsModalOpen }) => {
         to="/contact"
         onClick={onLinkClick}
       >
-        Contact
+        Contacto
       </NavLink>
       <NavLink
         className={`${themeClass}`}
         to="/favs"
         onClick={onLinkClick}
       >
-        Favs
+        Favoritos
       </NavLink>
       <ThemeButton />
     </div>

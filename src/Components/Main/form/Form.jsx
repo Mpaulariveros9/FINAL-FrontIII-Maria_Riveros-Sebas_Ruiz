@@ -17,11 +17,11 @@ const Form = ({ formValues, setFormValues }) => {
       onSubmit={onFormSubmit}
     >
       <fieldset className="form__fieldset">
-        <legend className="form__legend">Contact information</legend>
+        <legend className="form__legend">Información de Contacto</legend>
         <Label
           labelClass="form__label"
           htmlFor="name"
-          text="Name"
+          text="Nombre"
         />
         <Input
           inputClass={`form__input ${formValues.name.validationClass}`}
@@ -30,7 +30,7 @@ const Form = ({ formValues, setFormValues }) => {
           id="name"
           name="name"
           value={formValues.name.value}
-          placeholder="Enter your name"
+          placeholder="Pepito Perez"
           onBlur={onInputBlur}
           isErrors={formValues.name.errors}
         />
@@ -39,7 +39,7 @@ const Form = ({ formValues, setFormValues }) => {
         <Label
           labelClass="form__label"
           htmlFor="email"
-          text="Email"
+          text="Correo Electronico"
         />
         <Input
           inputClass={`form__input ${formValues.email.validationClass}`}
@@ -48,7 +48,7 @@ const Form = ({ formValues, setFormValues }) => {
           id="email"
           name="email"
           value={formValues.email.value}
-          placeholder="Enter your email"
+          placeholder="xxxxxxxxx@xxxxx.com"
           onBlur={onInputBlur}
           isErrors={formValues.email.errors}
         />
@@ -63,7 +63,7 @@ const Form = ({ formValues, setFormValues }) => {
       />
 
       {formValues.isFormSubmitted && !formValues.isSuccess && (
-        <span className="form__error-message">Please check your information again.</span>
+        <span className="form__error-message">Por favor revisa tu información de nuevo.</span>
       )}
     </form>
   );

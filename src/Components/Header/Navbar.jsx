@@ -10,8 +10,8 @@ export const Navbar = () => {
       <nav className="navbar">
         {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
         <NavLink to="/home">Home</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-        <NavLink to="/favs">Favs</NavLink>
+        <NavLink to="/contact">Contacto</NavLink>
+        <NavLink to="/favs">Favoritos</NavLink>
         {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
         <ThemeButton />
       </nav>
