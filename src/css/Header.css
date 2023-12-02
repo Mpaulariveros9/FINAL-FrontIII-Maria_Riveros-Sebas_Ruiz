@@ -6,6 +6,11 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header__tooth-icon{
+  font-size: 40px;
 }
 
 .header__h1:hover {
@@ -33,6 +38,10 @@
   z-index: 100;
 }
 
+.faTooth {
+  height: 100px;
+}
+
 .navbar {
   display: none;
   font-weight: 700;
@@ -57,15 +66,15 @@
 }
 
 .dark .navbar a.active {
-  color: #b1b1b1;
+  color: #050d3b;
 }
 
 .light .navbar a.active {
-  color: #818181;
+  color: rgb(23, 43, 170);
 }
 
 .dark .menu-modal a.active {
-  color: #b1b1b1;
+  color: #1248c5;
 }
 
 .light .menu-modal a.active {

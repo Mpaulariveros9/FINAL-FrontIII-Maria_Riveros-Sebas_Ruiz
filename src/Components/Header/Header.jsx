@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ListIcon } from '../../assets/icons';
-import { MenuModal, Navbar } from './';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTooth } from '@fortawesome/free-solid-svg-icons';
+import { Menu, Navbar } from './';
 import '../../css/Header.css';
-
 
 export const Header = ({ themeClass }) => {
   const navigate = useNavigate();
@@ -12,6 +12,7 @@ export const Header = ({ themeClass }) => {
 
   return (
     <header className={`${themeClass} header`}>
+      <FontAwesomeIcon icon={faTooth} className="header__tooth-icon" />
       <h1
         className="header__h1"
         onClick={() => navigate('/')}
@@ -24,11 +25,10 @@ export const Header = ({ themeClass }) => {
         className="header__button"
         onClick={() => setIsModalOpen(!isModalOpen)}
       >
-        <ListIcon themeClass={themeClass} />
       </button>
 
       {isModalOpen && (
-        <MenuModal
+        <Menu
           themeClass={themeClass}
           setIsModalOpen={setIsModalOpen}
         />

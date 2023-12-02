@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardText } from '.';
 
-export const CardTextContainer = ({ textArray }) => {
+export const CardContent = ({ textArray }) => {
   return (
     <div className="card__text">
       {textArray.map(text => (

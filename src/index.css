@@ -12,7 +12,7 @@
   --primary-color: #007bff; /* Azul brillante como color principal */
   --secondary-color: #0056b3; /* Azul oscuro como color secundario */
   --background-color: #ffffff; /* Fondo blanco */
-  --text-color: #333333; /* Texto negro */
+  --text-color: #12131b; /* Texto negro */
 }
 
 body {
@@ -25,13 +25,13 @@ a {
   color: var(--text-color);
 }
 
-/* Tema claro */
+/* claro */
 .light {
-  background-color: var(--background-color);
+  background-color: #f3f7fb;
   color: var(--text-color);
 }
 
-/* Tema oscuro */
+/* oscuro */
 .dark {
   background-color: var(--primary-color);
   color: white;

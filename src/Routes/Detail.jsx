@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { LeftArrow } from '../assets/icons/LeftArrow';
 import Card from '../Components/Main/card/Card';
-import { GridCardSkeleton } from '../Components/Main/skeleton/GridCardSkeleton';
+import { GridCard } from '../Components/Main/skeleton/GridCard';
 import { useAppContext } from '../hooks/useAppContext';
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
@@ -28,15 +28,15 @@ const Detail = () => {
         <LeftArrow arrowClass="card-grid__arrow" />
       </div>
       {isFetching ? (
-        <GridCardSkeleton />
+        <GridCard />
       ) : (
         <Card
           data={data}
           onClick={null}
           textArray={[
-            { field: 'Name', value: data.name },
-            { field: 'Email', value: data.email },
-            { field: 'Phone', value: data.phone },
+            { field: 'Nombre', value: data.name },
+            { field: 'Correo', value: data.email },
+            { field: 'Telefono', value: data.phone },
             { field: 'Website', value: data.website },
           ]}
           cardClass="card--detail"

@@ -2,7 +2,7 @@ import React from 'react';
 import { useAppContext } from '../../../hooks/useAppContext';
 import doctorImg from '../../../assets/img/doctor.jpg';
 import { HeartFillIcon, HeartIcon } from '../../../assets/icons';
-import { CardTextContainer } from './CardTextContainer';
+import { CardContent } from './CardContent';
 
 function Card({ data, onClick, textArray, cardClass }) {
   const { id } = data || '';
@@ -38,7 +38,7 @@ function Card({ data, onClick, textArray, cardClass }) {
         src={doctorImg}
         alt="doctor" />
 
-      <CardTextContainer textArray={textArray} />
+      <CardContent textArray={textArray} />
 
       {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
 

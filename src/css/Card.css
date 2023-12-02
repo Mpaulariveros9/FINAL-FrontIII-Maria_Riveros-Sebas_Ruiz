@@ -1,8 +1,19 @@
 .card__image {
-  border-radius: 10px 10px 0 0;
-  height: 200px;
-  width: inherit;
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: center;  /* Añadido para centrar horizontalmente */
+  border-radius: 100px;
+  height: 150px;
+  width: 150px;
+  overflow: hidden;  /* Añadido para manejar el recorte de la imagen si es necesario */
 }
+
+.card__image img {
+  width: 100%;  /* Añadido para asegurar que la imagen ocupe todo el contenedor */
+  height: auto;  /* Añadido para mantener la proporción de la imagen */
+}
+
 
 .card__text {
   display: flex;
@@ -47,6 +58,7 @@
 
 .card {
   border-radius: 10px;
+  align-items: center;
   display: flex;
   flex-direction: column;
   height: 350px;

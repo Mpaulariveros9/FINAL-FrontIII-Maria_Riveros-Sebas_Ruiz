@@ -1,20 +1,25 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ThemeButton } from './ThemeButton';
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons';
+import { ButtonChangeTheme } from './ButtonChangeTheme';
 
 export const Navbar = () => {
   return (
-    <>
-      <nav className="navbar">
-        {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-        <NavLink to="/home">Home</NavLink>
-        <NavLink to="/contact">Contacto</NavLink>
-        <NavLink to="/favs">Favoritos</NavLink>
-        {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-        <ThemeButton />
-      </nav>
-    </>
+    <nav className="navbar">
+      <NavLink to="/home">
+        <FontAwesomeIcon icon={faHome} />
+          Home
+      </NavLink>
+      <NavLink to="/contact">
+        <FontAwesomeIcon icon={faEnvelope} />
+          Contacto
+      </NavLink>
+      <NavLink to="/favs">
+        <FontAwesomeIcon icon={faStar} />
+          Favoritos
+      </NavLink>
+      <ButtonChangeTheme />
+    </nav>
   );
 };

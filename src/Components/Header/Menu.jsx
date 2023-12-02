@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ThemeButton } from './ThemeButton';
+import { ButtonChangeTheme } from './ButtonChangeTheme';
 
-export const MenuModal = ({ themeClass, setIsModalOpen }) => {
+export const Menu = ({ themeClass, setIsModalOpen }) => {
   const onLinkClick = () => {
     setIsModalOpen(false);
   };
@@ -13,23 +13,23 @@ export const MenuModal = ({ themeClass, setIsModalOpen }) => {
         to="/home"
         onClick={onLinkClick}
       >
-        Home
+         Home
       </NavLink>
       <NavLink
         className={`${themeClass}`}
         to="/contact"
         onClick={onLinkClick}
       >
-        Contacto
+         Contacto
       </NavLink>
       <NavLink
         className={`${themeClass}`}
         to="/favs"
         onClick={onLinkClick}
       >
-        Favoritos
+         
       </NavLink>
-      <ThemeButton />
+      <ButtonChangeTheme />
     </div>
   );
 };

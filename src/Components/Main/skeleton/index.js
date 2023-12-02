@@ -1,2 +1,2 @@
 export * from './CardSkeleton';
-export * from './GridCardSkeleton';
+export * from './GridCard';

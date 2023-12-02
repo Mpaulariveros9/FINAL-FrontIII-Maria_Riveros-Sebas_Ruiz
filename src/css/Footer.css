@@ -1,15 +1,22 @@
 /* Footer Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .footer {
-  align-items: center;
   display: flex;
-  font-weight: 600;
-  height: 10vh;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 300;
+  height: auto; /* Ajusta la altura automáticamente según el contenido */
   background-color: #ffffff; /* Color de fondo */
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sutil sombra en la parte superior */
 
   /* Espaciado y estilos adicionales */
-  padding: 10px;
+  padding: 20px; /* Ajusta el relleno según sea necesario */
 }
 
 /* Estilos para los nombres de los estudiantes */
@@ -22,7 +29,6 @@
 .footer__social-icons {
   display: flex;
   gap: 10px; /* Espaciado entre los iconos */
-  margin-top: 10px; /* Espaciado desde los nombres de los estudiantes */
 }
 
 .footer__social-icons a {
@@ -37,25 +43,35 @@
 
 /* Estilos para el enlace a la página web de Digital House */
 .footer__dh-link {
-  align-items: center;
   color: #333333; /* Color del texto */
-  display: flex;
   text-decoration: none; /* Elimina el subrayado del enlace */
+  display: flex;
+  align-items: center;
 }
 
 .footer__dh-link p {
   font-size: 1rem; /* Tamaño de fuente */
-  margin: 0; /* Elimina el margen predeterminado */
+  margin: 0 10px; /* Agrega espacio alrededor del texto */
 }
 
 /* Estilos para el logotipo de Digital House */
 .footer__dh-link img {
   width: 40px; /* Tamaño del logotipo */
-  margin-left: 10px; /* Espaciado desde el texto */
 }
+
+
+.icons__footer{
+  font-size: 30px;
+  margin: 5px;
+}
+
 
 /* Media query para pantallas más grandes (mínimo 768px) */
 @media (min-width: 768px) {
+  .footer {
+    flex-direction: row; /* Cambia a dirección horizontal en pantallas más grandes */
+  }
+
   .footer__p {
     font-size: 1.2rem; /* Ajusta el tamaño de fuente para pantallas más grandes */
   }

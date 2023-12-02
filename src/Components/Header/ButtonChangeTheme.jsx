@@ -1,8 +1,9 @@
 import React from 'react';
 import { useAppContext } from '../../hooks/useAppContext';
-import { MoonIcon, SunIcon } from '../../assets/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
-export const ThemeButton = () => {
+export const ButtonChangeTheme = () => {
   const {
     changeTheme,
     state: { isDarkMode },
@@ -12,9 +13,9 @@ export const ThemeButton = () => {
     <button
       className="menu-modal__theme-button"
       onClick={changeTheme}
-      aria-label="themeButton"
+      aria-label="ButtonChangeTheme"
     >
-      {isDarkMode ? <SunIcon /> : <MoonIcon />}
+      <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
     </button>
   );
 };

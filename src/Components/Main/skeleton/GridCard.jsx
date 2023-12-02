@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardSkeleton } from './CardSkeleton';
 
-export const GridCardSkeleton = ({ cardAmount }) => {
+export const GridCard = ({ cardAmount }) => {
   return (
     <div className="skeleton-grid">
       {[...Array(cardAmount)].map((x, i) => (

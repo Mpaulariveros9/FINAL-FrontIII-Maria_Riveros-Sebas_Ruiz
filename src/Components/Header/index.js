@@ -1,4 +1,4 @@
 export * from './Header';
-export * from './MenuModal';
+export * from './Menu';
 export * from './Navbar';
-export * from './ThemeButton';
+export * from './ButtonChangeTheme';
