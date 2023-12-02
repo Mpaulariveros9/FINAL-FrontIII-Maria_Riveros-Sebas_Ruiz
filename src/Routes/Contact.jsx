@@ -25,13 +25,13 @@ const Contact = () => {
           <div className="contact-text--success">
             <FontAwesomeIcon icon={faCheckCircle} />
             <h2>Thanks {formValues.name.value}</h2>
-            <p className="card-grid__empty-message">We will contact you soon by email.</p>
+            <p className="card-grid__empty-message">Nos contactaremos pronto contigo</p>
           </div>
         ) : (
           <>
             <div className="contact-text">
-              <h3 className="contact-text__h2">Want to know more?</h3>
-              <p>Send us your questions, and we will contact you.</p>
+              <h3 className="contact-text__h2">¿Quieres saber cúal es tu odontologo ideal?</h3>
+              <p>Por favor completa el formulario para ser contactado</p>
             </div>
 
             <Form formValues={formValues} setFormValues={setFormValues} />
